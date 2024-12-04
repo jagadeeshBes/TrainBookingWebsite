@@ -1,0 +1,93 @@
+<app-nav></app-nav>
+
+<nav class="nav nav-pills nav-fill">
+  <select name="fromStation" id="" [(ngModel)]="SearchData.fromStationId">
+    <option value="1"*ngFor="let item of stationList" [value]="item.stationID">{{item.stationName}}</option>
+  </select>
+  <select name="toStation" id=""[(ngModel)]="SearchData.toStationId">
+    <option value="1"*ngFor="let item of stationList" [value]="item.stationID">{{item.stationName}}</option>
+  </select>
+  <input type="text" name="date" [(ngModel)]="SearchData.dateOfTravel">
+  <button (click)="GetTrainSearch()">Modify Search</button>
+</nav>
+
+<div class="row card-data">
+<div class="de">
+  <div *ngFor="let item of trainList; let i = index" class="card col-lg-6 col-sm-12 col-md-6 mt-4">
+    <div class="card-header">
+      {{item.trainName}} {{item.trainNo}}
+    </div>
+    
+    <div class="card-body">
+      <div class="text">
+        <p class="card-text">{{item.departureTime}} | {{item.departureStationName}} {{item.departureDate | date:'dd-mm-yy'}}</p>
+        <p class="card-text">10hrs</p>
+        <p class="card-text">{{item.arrivalTime}} | {{item.arrivalStationName}} | {{item.arrivalTime}}</p>
+      </div>
+      <a href="#" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#Mod" data-bs-whatever="@mdo">Book Now</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!--Book Ticket-->
+
+
+<div class="modal fade" id="Mod" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book Ticket</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="pasanger">
+        <form>
+          <div class="mb-3">
+           
+          </div>
+          <div class="pasanger">
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Passenger Name</label>
+              <input type="text" class="form-control" [(ngModel)]="Passange.passengerName" name="PhoneNumber">
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Age</label>
+              <input type="text" class="form-control"[(ngModel)]="Passange.age" name="Lastname">
+            </div>
+            <div class="mb-3">
+              <button (click)="AddPasanger()">Add</button>
+            </div>
+          </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  
+                  <th scope="col">Sr</th>
+                  <th scope="col">Passenger Name</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>@for (item of pasangerList; track $index) {
+                <tr>
+                  <th scope="row">{{$index+1}}</th>
+                  <td>{{item.passengerName}}</td>
+                  <td>{{item.age}}</td>
+                  <td class="btn btn-danger"(click)="remove($index)">Remove</td>
+                </tr>
+              }
+              </tbody>
+            </table>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal">Close</button>
+        <button type="button">Book Ticket</button>
+      </div>
+    </div>
+  </div>
+</div>

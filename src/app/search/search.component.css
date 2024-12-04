@@ -1,0 +1,62 @@
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 25px 0px;
+    background-color: rgb(141, 142, 143);
+}
+select{
+    padding: 7px 105px;
+    background-color: white;
+    border-radius: 5px;
+}
+button{
+    padding: 0px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    font-weight: 300;
+}
+input{
+    border-radius: 5px;
+
+}
+.text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.card-header{
+    background-color: rgb(141, 142, 143);
+    padding: 20px 0px;
+}
+li{
+    list-style: none;
+}
+.card-data{
+    margin: 30px;
+}
+
+.pasanger{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+@media only screen and (max-width: 480px) {
+    .nav{
+        
+        flex-direction: column;
+        padding: 15px 20px;
+       
+    }    
+    button,input,select{
+        margin-bottom: 20px;
+    }
+    button,input{
+        padding: 10px 0px;
+    }
+}

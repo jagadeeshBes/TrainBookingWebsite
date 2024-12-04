@@ -1,0 +1,48 @@
+h1{
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+label{
+    margin-bottom: 5px;
+}
+.date{
+    padding: 4px 45px;
+}
+input{
+    border-radius: 5px;
+    
+}
+button{
+    border: none;
+    padding: 10px 45px;
+    border-radius: 10px;
+}
+body{
+    height: 100vh;
+}
+.Home{
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.image {
+    margin-left: 80px;
+}
+img{
+    border-radius: 10px;
+}
+@media only screen and (max-width: 480px) {
+    .image{
+        margin-left: 0;
+       
+    }
+    img{
+        width: 300px;
+    }
+ }

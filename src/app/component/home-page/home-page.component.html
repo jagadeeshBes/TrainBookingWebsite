@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<h1 class="">Book Ticket</h1>
+
+<div class="row Home">
+    <div class="search col-lg-3">
+        <ul>
+            <li>
+                <label for="station">From Station</label>
+                <select class="form-select" [(ngModel)]="fromStation" name="fromStation">
+                    <option selected value="0">From Station</option>
+                   
+                    <option *ngFor="let item of stationList" [value]="item.stationID">{{item.stationName}}</option>
+                  </select>
+            </li> 
+            <li>
+                <label for="station">To Station</label>
+                <select class="form-select" [(ngModel)]= "toStation" name="toStation">
+                    <option selected value="0">To Station</option>
+                   
+                        <option *ngFor="let item of stationList" [value]="item.stationID">{{item.stationName}}</option>
+                </select>
+            </li>
+            <li>
+                <label for="station">Date Of Travel</label><br>
+                <input type="date" class="date" [(ngModel)]="dateOfTravel" name="dateOfTravel">
+            </li>
+            <li><button class="btn btn-dark" (click)="onSearch()">Search</button></li>
+        </ul>
+    </div>
+    <div class="image col-lg-7">
+        <img src="https://images.pexels.com/photos/3095543/pexels-photo-3095543.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+    </div>
+</div>
